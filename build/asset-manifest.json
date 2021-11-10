@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/react-router-great-quote/static/css/main.efe08c99.chunk.css",
+    "main.js": "/react-router-great-quote/static/js/main.daf75187.chunk.js",
+    "main.js.map": "/react-router-great-quote/static/js/main.daf75187.chunk.js.map",
+    "runtime-main.js": "/react-router-great-quote/static/js/runtime-main.3a477931.js",
+    "runtime-main.js.map": "/react-router-great-quote/static/js/runtime-main.3a477931.js.map",
+    "static/js/2.9572b0b2.chunk.js": "/react-router-great-quote/static/js/2.9572b0b2.chunk.js",
+    "static/js/2.9572b0b2.chunk.js.map": "/react-router-great-quote/static/js/2.9572b0b2.chunk.js.map",
+    "index.html": "/react-router-great-quote/index.html",
+    "static/css/main.efe08c99.chunk.css.map": "/react-router-great-quote/static/css/main.efe08c99.chunk.css.map",
+    "static/js/2.9572b0b2.chunk.js.LICENSE.txt": "/react-router-great-quote/static/js/2.9572b0b2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3a477931.js",
+    "static/js/2.9572b0b2.chunk.js",
+    "static/css/main.efe08c99.chunk.css",
+    "static/js/main.daf75187.chunk.js"
+  ]
+}
