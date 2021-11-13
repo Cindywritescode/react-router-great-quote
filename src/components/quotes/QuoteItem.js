@@ -1,14 +1,17 @@
 import classes from './QuoteItem.module.css';
 import { NavLink } from 'react-router-dom';
 
-const QuoteItem = (props) => {
+const QuoteItem = (
+  text,
+  author
+) => {
   return (
     <li className={classes.item}>
       <figure>
         <blockquote>
-          <p>{props.text}</p>
+          <p>{text}</p>
         </blockquote>
-        <figcaption>{props.author}</figcaption>
+        <figcaption>{author}</figcaption>
       </figure>
       <NavLink className="btn" to="/quotes/:quoteId">
         View Fullscreen

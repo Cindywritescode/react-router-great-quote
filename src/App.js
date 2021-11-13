@@ -1,4 +1,4 @@
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch, } from 'react-router-dom';
 import { AllQuotes } from './pages/AllQuotes';
 import { QuoteDetail } from './pages/QuoteDetail';
 import { NewQuotes } from './pages/NewQuote';
