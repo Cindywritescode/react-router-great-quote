@@ -1,7 +1,8 @@
-import { Route, useParams } from 'react-router-dom';
+import { Link, Route, useParams } from 'react-router-dom';
 import { Fragment } from 'react';
 import Comments from '../components/comments/Comments';
 import HighlightedQuote from '../components/quotes/HighlightedQuote';
+import NoQuotesFound from '../components/quotes/NoQuotesFound';
 
 const DUMMY_QUOTES = [
   { id: 'q1', author: 'Cindy', text: 'learning React is great' },
@@ -17,16 +18,19 @@ export const QuoteDetail = () => {
   const quote = DUMMY_QUOTES.find(quote => quote.id === params.quoteId );
 
   if (!quote) {
-    return <p>No quote found!</p>
+    return <NoQuotesFound/>
   }
 
   return (
     <Fragment>
+      {/*<p>{params.quoteId}</p>*/}
       <HighlightedQuote text={quote.text} author={quote.author} />
-      <p>{params.quoteId}</p>
       <Route path={`/quotes/${params.quoteId}/comments`} >
         <Comments/>
       </Route>
+      <Link className="btn" to={`/quotes`}>
+        Back
+      </Link>
     </Fragment>
   );
 };
