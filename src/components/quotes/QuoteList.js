@@ -12,14 +12,18 @@ const QuoteList = ({
 
   const queryParams = new URLSearchParams(location.search);
 
+  const isSortingAscending = queryParams.get('sort') === 'asc';
+
   const changeSortingHandler = () => {
-    history.push('/quotes?' + {queryParams})
-  }
+    history.push('/quotes?sort=' + (isSortingAscending ? 'desc' : 'asc'));
+  };
 
   return (
     <Fragment>
       <div className={classes.sorting}>
-        <button onClick={changeSortingHandler}>Sort Ascending</button>
+        <button onClick={changeSortingHandler}>
+          Sort {isSortingAscending ? 'Descending' : 'Ascending'}
+        </button>
       </div>
       <ul className={classes.list}>
         {quotes.map((quote) => (
