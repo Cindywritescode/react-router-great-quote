@@ -15,22 +15,29 @@ const DUMMY_QUOTES = [
 export const QuoteDetail = () => {
   const params = useParams();
 
-  const quote = DUMMY_QUOTES.find(quote => quote.id === params.quoteId );
+  const quote = DUMMY_QUOTES.find(quote => quote.id === params.quoteId);
 
   if (!quote) {
-    return <NoQuotesFound/>
+    return <NoQuotesFound/>;
   }
 
   return (
     <Fragment>
       {/*<p>{params.quoteId}</p>*/}
-      <HighlightedQuote text={quote.text} author={quote.author} />
-      <Route path={`/quotes/${params.quoteId}/comments`} >
+      <HighlightedQuote text={quote.text} author={quote.author}/>
+      <div className="centered">
+        <Link className='btn--flat' to={`/quotes/${params.quoteId}/comments`}>
+          Load Comments
+        </Link>
+      </div>
+      <Route path={`/quotes/${params.quoteId}/comments`}>
         <Comments/>
       </Route>
-      <Link className="btn" to={`/quotes`}>
-        Back
-      </Link>
+      <div className="centered">
+        <Link className="btn--flat" to={`/quotes`}>
+          Back
+        </Link>
+      </div>
     </Fragment>
   );
 };

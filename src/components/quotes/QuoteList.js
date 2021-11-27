@@ -1,5 +1,4 @@
 import { Fragment } from 'react';
-
 import QuoteItem from './QuoteItem';
 import classes from './QuoteList.module.css';
 import { useHistory, useLocation } from 'react-router-dom';
@@ -24,6 +23,8 @@ const QuoteList = ({
 
   const isSortingAscending = queryParams.get('sort') === 'asc';
 
+  const sortedQuotes = sortQuotes(quotes, isSortingAscending);
+
   const changeSortingHandler = () => {
     history.push('/quotes?sort=' + (isSortingAscending ? 'desc' : 'asc'));
   };
@@ -36,7 +37,7 @@ const QuoteList = ({
         </button>
       </div>
       <ul className={classes.list}>
-        {quotes.map((quote) => (
+        {sortedQuotes.map((quote) => (
           <QuoteItem
             key={quote.id}
             id={quote.id}
