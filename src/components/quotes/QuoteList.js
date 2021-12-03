@@ -5,12 +5,12 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 const sortQuotes = (quotes, ascending) => {
   return quotes.sort((quoteA, quoteB) => {
-      if (ascending) {
-        return quoteA.id > quoteB.id ? 1 : -1;
-      } else {
-        return quoteA.id < quoteB.id ? 1 : -1;
-      }
-    });
+    if (ascending) {
+      return quoteA.id > quoteB.id ? 1 : -1;
+    } else {
+      return quoteA.id < quoteB.id ? 1 : -1;
+    }
+  });
 };
 
 const QuoteList = ({
@@ -26,7 +26,10 @@ const QuoteList = ({
   const sortedQuotes = sortQuotes(quotes, isSortingAscending);
 
   const changeSortingHandler = () => {
-    history.push(`${location.pathname}?sort=${(isSortingAscending ? 'desc' : 'asc')}`);
+    history.push({
+      pathname: location.pathname,
+      search:`?sort=${(isSortingAscending ? 'desc' : 'asc')}`
+    });
   };
 
   return (
